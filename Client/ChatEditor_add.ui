@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>chat_editor_dialog</class>
+ <widget class="QWidget" name="chat_editor_dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>250</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>250</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>400</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Create Chat</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+	background-color: rgb(6, 76, 162);
+}
+
+QFrame {
+	background-color: rgb(4, 47, 102);
+}
+
+/*VERTICAL SCROLLBAR*/
+QScrollBar:vertical{
+	border: none;
+	background-color: rgb(0, 0, 102);
+	width: 14px;
+	margin: 15px 0 15px 0;
+	border-radius: 0px;
+}
+
+/*HANDLE BAR*/
+QScrollBar::handle:vertical{
+	background-color: rgb(0, 0, 166);
+	min-height: 30px;
+	border-radius: 7px;
+}
+
+QScrollBar::handle:vertical:hover{
+	background-color: rgb(122, 115, 199);
+}
+
+QScrollBar::handle:vertical:pressed{
+	background-color: rgb(159, 155, 204);
+}
+
+/*BTN TOP SCROLLBAR*/
+QScrollBar::sub-line:vertical{
+	border: none;
+	background-color: rgb(0, 0, 102);
+	height: 15px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical:hover{
+	background-color: rgb(122, 115, 199);
+}
+
+QScrollBar::sub-line:vertical:pressed{
+	background-color: rgb(159, 155, 204);
+}
+
+/*BTN BOTTOM SCROLLBAR*/
+QScrollBar::add-line:vertical{
+	border: none;
+	background-color: rgb(0, 0, 102);
+	height: 15px;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:vertical:hover{
+	background-color: rgb(122, 115, 199);
+}
+
+QScrollBar::add-line:vertical:pressed{
+	background-color: rgb(159, 155, 204);
+}
+
+/*RESET ARROW*/
+QScrollBar::up-arrow::vertical, QScrollBar::down-arrow:vertical{
+	background: none;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical{
+	background: none;
+}
+
+background-color: rgb(110, 116, 117);</string>
+  </property>
+  <layout class="QVBoxLayout" name="chat_editor_verticalLayout">
+   <item>
+    <widget class="QFrame" name="chat_name_frame">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="chat_editor_horizontalLayout">
+      <item>
+       <widget class="QLineEdit" name="chat_editor_line_edit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit{
+	background-color: rgb(142, 167, 255);
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	padding: 4px 10px 4px;
+}</string>
+        </property>
+        <property name="placeholderText">
+         <string>Title</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="chat_card_list">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="chat_editor_verticalLayout_2">
+      <item>
+       <widget class="QLineEdit" name="chat_editor_searh_lineEdit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit{
+	background-color: rgb(142, 167, 255);
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	padding: 4px 10px 4px;
+}</string>
+        </property>
+        <property name="placeholderText">
+         <string>Search users</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QScrollArea" name="scrollArea">
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>210</width>
+           <height>230</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QCheckBox {
+	background-color: rgb(142, 167, 255);
+}</string>
+         </property>
+         <layout class="QFormLayout" name="chat_editor_formLayout"/>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="chat_user_list">
+     <property name="maximumSize">
+      <size>
+       <width>400</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="chat_editor_verticalLayout_3">
+      <item>
+       <widget class="QPushButton" name="create_chat">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	background-color: rgb(88, 99, 255);
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	font-size: 20px;
+}
+
+QPushButton:hover {
+	background-color: rgb(122, 115, 199);
+}
+
+QPushButton:pressed {
+	background-color: rgb(159, 155, 204);
+}</string>
+        </property>
+        <property name="text">
+         <string>Submit</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
